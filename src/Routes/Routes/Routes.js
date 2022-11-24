@@ -7,6 +7,7 @@ import NotFound from '../../Pages/NotFund/NotFound';
 import Profile from '../../Pages/Profile/Profile';
 import Register from '../../Pages/Register/Register';
 import SingUp from '../../Pages/SingUp/SingUp';
+import UsedCars from '../../Pages/UsedCars/UsedCars';
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile></Profile>
+            },
+            {
+                path: '/usedcar',
+                element: <UsedCars></UsedCars>
             },
             {
                 path: '/register',
