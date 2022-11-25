@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import toyota from '../../../assest/Brands/Tata_HGo8YNn.svg';
 import nissan from '../../../assest/Brands/nissan_new.svg';
 import rover from '../../../assest/Brands/land-rover.webp';
@@ -64,13 +64,21 @@ const FavoriteBrand = () => {
         },
         
     ]
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect( () => {
+        fetch('http://localhost:5000/brand-categories')
+        .then(res => res.json())
+        .then(data => setCategories(data))
+    } ,[])
     return (
         <section className=' bg-base-200 p-3 md:p-5 lg:py-12 my-9'>
             <h1 className='text-4xl'>Popular Brands</h1>
 
             <div className='flex flex-wrap mt-5'>
                {
-                brandData.map(brand => <Brand
+                categories?.map(brand => <Brand
                 key={brand.id}
                 brand={brand}
                 ></Brand>)
