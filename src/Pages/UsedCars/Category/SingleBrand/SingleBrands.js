@@ -34,7 +34,7 @@ const SingleBrands = ({brand}) => {
             </div>
             <hr className='w-full'/>
             <div className='flex justify-between items-center pr-2 md:pr-9'>
-                <p className='text-primary mt-3 flex items-center'><span>BUY NOW</span>   <BsArrowRight className='text-lg md:text-xl text-primary ml-1'></BsArrowRight></p>
+                <p className='text-primary mt-3 flex items-center'><span>BOOK NOW</span>   <BsArrowRight className='text-lg md:text-xl text-primary ml-1'></BsArrowRight></p>
                 <div className=''>
                     <BsBookmarkPlusFill className='text-lg md:text-xl text-primary mr-2'></BsBookmarkPlusFill>
                   

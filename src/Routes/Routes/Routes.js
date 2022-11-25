@@ -9,6 +9,8 @@ import Register from '../../Pages/Register/Register';
 import SingUp from '../../Pages/SingUp/SingUp';
 import Category from '../../Pages/UsedCars/Category/Category';
 import UsedCars from '../../Pages/UsedCars/UsedCars';
+import MyReviews from './../../Pages/MyRivew/MyReviews';
+import Reviews from './../../Pages/MyRivew/Reviews/Reviews';
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
             {
                 path: '/usedcar',
                 element: <UsedCars></UsedCars>
+            },
+            {
+                path: '/reviews',
+                element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/review',
+                element: <Reviews></Reviews>
             },
             {
                 path: '/category/:id',

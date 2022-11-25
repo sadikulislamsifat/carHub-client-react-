@@ -19,7 +19,7 @@ const Navbar = () => {
     <li><Link className=' text-lg' to='/blog'>Blog</Link></li>
     {
       user?.uid ? 
-      <li><Link className='text-lg' to='/register'>Service</Link></li> 
+      <li><Link className='text-lg' to='/reviews'>My Review</Link></li> 
       :
       <li><Link className='text-lg' to='/register'>Login</Link></li> 
     }
