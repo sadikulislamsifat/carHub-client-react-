@@ -7,6 +7,7 @@ import NotFound from '../../Pages/NotFund/NotFound';
 import Profile from '../../Pages/Profile/Profile';
 import Register from '../../Pages/Register/Register';
 import SingUp from '../../Pages/SingUp/SingUp';
+import Category from '../../Pages/UsedCars/Category/Category';
 import UsedCars from '../../Pages/UsedCars/UsedCars';
 
 export const router = createBrowserRouter([
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
             {
                 path: '/usedcar',
                 element: <UsedCars></UsedCars>
+            },
+            {
+                path: '/category/:id',
+                element: <Category></Category>,
+                loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
             },
             {
                 path: '/register',

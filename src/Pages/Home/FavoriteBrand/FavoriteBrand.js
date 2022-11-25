@@ -14,26 +14,34 @@ import Brand from './Brand';
 
 const FavoriteBrand = () => {
     const brandData = [
+      {
+         id: 1,
+         name: 'Marcedes Benz',
+         img: marcedes  
+      },
+        
         {
-           id: 1,
-           name: 'Toyota',
-           img: toyota  
-        },
+         id: 2,
+         name: 'BMW',
+         img: bmw 
+      },
+      {
+         id: 3,
+         name: 'Bently',
+         img: bently  
+      },
+      {
+         id: 4,
+         name: 'Range Rover',
+         img: rover 
+      },
         {
            id: 2,
            name: 'Nissan',
            img: nissan  
         },
-        {
-           id: 3,
-           name: 'Range Rover',
-           img: rover 
-        },
-        {
-           id: 4,
-           name: 'Bently',
-           img: bently  
-        },
+       
+        
         {
            id: 5,
            name: 'Tata',
@@ -45,20 +53,16 @@ const FavoriteBrand = () => {
            img: morris 
         },
         {
-           id: 7,
-           name: 'Marcedes Benz',
-           img: marcedes  
-        },
+         id: 1,
+         name: 'Toyota',
+         img: toyota  
+      },
         {
            id: 8,
            name: 'Audi',
            img: 'https://listcarbrands.com/wp-content/uploads/2015/10/Audi-Logo.png'  
         },
-        {
-           id: 9,
-           name: 'BMW',
-           img: bmw 
-        },
+        
     ]
     return (
         <section className=' bg-base-200 p-3 md:p-5 lg:py-12 my-9'>

@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import FavoriteBrand from '../Home/FavoriteBrand/FavoriteBrand';
+import Brand from './../Home/FavoriteBrand/Brand';
+import Category from './Category/Category';
 
 const UsedCars = () => {
     const [categories, setCategories] = useState([]);
@@ -10,17 +14,20 @@ const UsedCars = () => {
     } ,[])
     return (
         <div>
-            <div>
-                <select className="border py-2 px-5">
-                    <option disabled selected>Select You Favorite Brands</option>
-                    {
-            categories.map(category =>  <option key={category.id}>{category.name}</option>
-               
-            )
-           }
-                </select>
+            {/* <section className=' bg-base-200 p-3 md:p-5 lg:py-12 my-9'>
+            <h1 className='text-4xl'>Popular Brands</h1>
+
+            <div className='flex flex-wrap mt-5'>
+               {
+                categories.map(brand => <Brand
+                key={brand.id}
+                brand={brand}
+                ></Brand>)
+               }
             </div>
 
+        </section> */}
+        <FavoriteBrand></FavoriteBrand>
         </div>
     );
 };
