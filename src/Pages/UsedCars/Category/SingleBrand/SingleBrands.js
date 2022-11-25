@@ -18,7 +18,7 @@ const SingleBrands = ({brand}) => {
             <div className='font-semibol flex justify-between pr-2 md:pr-9'>
                 <div className=''>
                     <p>PRICE</p>
-                    <p className='text-red-500'>BDT:{price}</p>
+                    <p className='text-red-500'>BDT: {price}</p>
 
                 </div>
                 <div className='font-bold text-gray-400'>
