@@ -4,7 +4,13 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Profile = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+    .then(() => {})
+    .catch(e => console.error(e))
+  }
     return (
         <div className='min-h-screen bg-base-200 flex items-center justify-center'>
 
@@ -14,13 +20,13 @@ const Profile = () => {
                    <h4 className='text-xl text-white pt-5'>{user?.displayName ? user.displayName : 'User : NAN'}</h4>
                     {
                         user?.photoURL ?
-                        <img style={{width: '110px'}} src={user?.photoURL} className='shadow-lg rounded-full mx-auto mt-1 ' alt=""/>
+                        <img style={{width: '80px'}} src={user?.photoURL} className='shadow-lg rounded-full mx-auto mt-1 ' alt=""/>
                         :
                         <FaUserCircle className='text-6xl mx-auto mt-1 '></FaUserCircle>
                     }
                    </div>
                 </div>
-                <div className='p-4'>
+                <div className='p-4 mt-4'>
                     <p className='mt-4 text-lg font-semibold'>Name : {user?.displayName ? user.displayName : 'NAN'}</p>
                     <hr className='border-b-2 border-base-300'/>
 
@@ -32,7 +38,7 @@ const Profile = () => {
                     <hr className='border-b-2 border-base-300'/>
                     {
                         user?.uid ?
-                        <button className='btn btn-primary text-white mt-4 w-full' type="">Log Out</button>
+                        <button onClick={handleLogOut} className='btn btn-primary text-white mt-4 w-full' type="">Log Out</button>
                         :
                         <Link className='btn btn-primary text-white mt-4 w-full' to='/register'>Login</Link>
                     }

@@ -7,7 +7,7 @@ const SingleBrands = ({brand}) => {
     const {Milage, brand : brandName, category_id, color, engine, gearbox, id, img, location, name, price, year} = brand;
     console.log(brand)
     return (
-    <div className='bg-white flex rounded-md'>
+    <div className='bg-white flex rounded-md border'>
         <div className='w-2/5'>
             <img className='w-full rounded-md h-full' src={img} alt=""/>
         </div>
