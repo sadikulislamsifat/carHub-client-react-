@@ -34,7 +34,7 @@ const SingleBrands = ({brand, setCars}) => {
             </div>
             <hr className='w-full'/>
             <div className='flex justify-between items-center pr-2 md:pr-9'>
-                <button  className='text-primary mt-3 flex items-center'><label
+                <button  className='text-primary mt-3 flex items-center font-semibold'><label
                 onClick={() => setCars(brand)}
                 htmlFor="booking-modal" 
                 >BOOK NOW</label>  <BsArrowRight className='text-lg md:text-xl text-primary ml-1'></BsArrowRight></button>

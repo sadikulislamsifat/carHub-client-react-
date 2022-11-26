@@ -63,11 +63,11 @@ const Navbar = () => {
     </div>
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
+        <div className="w-10 rounded-full ">
           {
             user?.uid &&
             user?.photoURL ?
-            <img src={user?.photoURL} alt='' />
+            <img className='' src={user?.photoURL} alt='' />
             :
             <FaUserCircle className='text-4xl mt-1 text-white'></FaUserCircle>
           }
