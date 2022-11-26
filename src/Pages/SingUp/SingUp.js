@@ -2,17 +2,22 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from './../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { AiFillEye,AiFillEyeInvisible } from "react-icons/ai";
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const SingUp = () => {
     const [eyeBtn, setEyeBtn] = useState(false)
     const {creatUser, updateUserProfile} = useContext(AuthContext);
 
+    const handleChecked = (event) => {
+      console.log(event)
+    }
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log()
         // console.log(name, photoURL, email, password);
 
         creatUser(email, password)
@@ -38,7 +43,7 @@ const SingUp = () => {
           }
         }
         const handleEyebtnToggle = (event) => {
-            console.log(event.checked)
+            console.log(event.target.checked)
         }
     return (
         <form onSubmit={handleSubmit}>
@@ -54,15 +59,10 @@ const SingUp = () => {
             }
             </span>
           </div>
-            
-            <div className="form-control">
-                <label className="cursor-pointer block mt-3 label">
-               <div className='flex'>
-               <input type="checkbox"   className="checkbox mt- checkbox-sm" /> 
-                    <span className=" ml-2 mb-1">Accept Terms And Conditions</span>
-
-               </div>
-                </label>
+            <div className='flex mt-2 font-semibold'>
+            <span>Join As a</span>
+            <input type="radio" name="radio-1" className="radio ml-2" checked /><span className='ml-2'>Buyer</span>
+<input type="radio" onClick={handleChecked} name="radio-1" className="radio ml-2" /><span className='ml-2'>Seller</span>
             </div>
             <button className='submit-btn w-full text-white font-semibold text-xl mt-5' type="submit" >Register</button>
         </form>

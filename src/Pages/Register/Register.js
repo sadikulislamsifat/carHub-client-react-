@@ -36,7 +36,7 @@ const Register = () => {
                         <div id='btn' className={`${btn ? 'right-0' : 'left-0'}`}>
 
                         </div>
-                        <Link onClick={() => setBtn(false)} to='/register/login' className='toggle-btn font-semibold'>Log In</Link>
+                        <Link onClick={() => setBtn(false)} to='/register/login' className={`toggle-btn font-semibold `}>Log In</Link>
                         <Link onClick={() => setBtn(true)} to='/register/singup' className='toggle-btn font-semibold'>Register</Link>
                     </div>
                     <div className='text-center my-3 '>

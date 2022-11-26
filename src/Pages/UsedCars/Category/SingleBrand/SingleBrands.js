@@ -3,7 +3,7 @@ import { MdLocationPin, MdLocalGasStation } from "react-icons/md";
 import { TbEngine} from "react-icons/tb";
 import { BsBookmarkPlusFill, BsArrowRight} from "react-icons/bs";
 
-const SingleBrands = ({brand}) => {
+const SingleBrands = ({brand, setCars}) => {
     const {Milage, brand : brandName, category_id, color, engine, gearbox, id, img, location, name, price, year} = brand;
     console.log(brand)
     return (
@@ -34,7 +34,10 @@ const SingleBrands = ({brand}) => {
             </div>
             <hr className='w-full'/>
             <div className='flex justify-between items-center pr-2 md:pr-9'>
-                <p className='text-primary mt-3 flex items-center'><span>BOOK NOW</span>   <BsArrowRight className='text-lg md:text-xl text-primary ml-1'></BsArrowRight></p>
+                <button  className='text-primary mt-3 flex items-center'><label
+                onClick={() => setCars(brand)}
+                htmlFor="booking-modal" 
+                >BOOK NOW</label>  <BsArrowRight className='text-lg md:text-xl text-primary ml-1'></BsArrowRight></button>
                 <div className=''>
                     <BsBookmarkPlusFill className='text-lg md:text-xl text-primary mr-2'></BsBookmarkPlusFill>
                   

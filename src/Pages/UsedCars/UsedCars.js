@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FavoriteBrand from '../Home/FavoriteBrand/FavoriteBrand';
+import Tutorial from '../Tutorial/Tutorial';
 import Brand from './../Home/FavoriteBrand/Brand';
 import Category from './Category/Category';
 
@@ -13,7 +14,7 @@ const UsedCars = () => {
         .then(data => setCategories(data))
     } ,[])
     return (
-        <div>
+        <div className='min-h-screen'>
             {/* <section className=' bg-base-200 p-3 md:p-5 lg:py-12 my-9'>
             <h1 className='text-4xl'>Popular Brands</h1>
 
@@ -28,6 +29,7 @@ const UsedCars = () => {
 
         </section> */}
         <FavoriteBrand></FavoriteBrand>
+        <Tutorial></Tutorial>
         </div>
     );
 };
