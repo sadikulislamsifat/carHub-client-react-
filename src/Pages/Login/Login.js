@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react';
 import { AiFillEye,AiFillEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { useNavigate,  useLocation, Link } from 'react-router-dom';
+import useTitle from './../../hooks/useTitle/useTitle';
 
 const Login = () => {
     const [eyeBtn, setEyeBtn] = useState(false);
     const {singIn, setLoading} = useContext(AuthContext);
     const [error, setError] = useState('');
 
+    useTitle('Login')
     const navigate = useNavigate();
     const location = useLocation();
 

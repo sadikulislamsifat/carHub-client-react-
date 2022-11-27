@@ -73,7 +73,7 @@ const FavoriteBrand = () => {
         .then(data => setCategories(data))
     } ,[])
     return (
-        <section className=' bg-base-200 p-3 md:p-5 lg:py-12 my-9'>
+        <section className=' my-12 bg-base-200 p-3 md:p-5 lg:py-12 my-9'>
             <h1 className='text-4xl'>Popular Brands</h1>
 
             <div className='flex flex-wrap mt-5'>

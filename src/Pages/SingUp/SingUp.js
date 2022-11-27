@@ -3,14 +3,19 @@ import { AuthContext } from './../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { AiFillEye,AiFillEyeInvisible } from "react-icons/ai";
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import useTitle from './../../hooks/useTitle/useTitle';
+import { useNavigate } from 'react-router-dom';
 
 const SingUp = () => {
     const [eyeBtn, setEyeBtn] = useState(false)
     const {creatUser, updateUserProfile} = useContext(AuthContext);
+    const [seller, setSeller] = useState(false);
+    const navigate = useNavigate();
 
-    const handleChecked = (event) => {
-      console.log(event)
-    }
+    console.log(seller)
+    useTitle('Sing Up')
+
+    
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -38,13 +43,39 @@ const SingUp = () => {
               displayName: name
             }
             updateUserProfile(profile)
-            .then(() => {})
+            .then(() => {
+              saveUser(name, email, seller)
+            })
             .catch(error => console.error(error))
           }
         }
-        const handleEyebtnToggle = (event) => {
-            console.log(event.target.checked)
+        const saveUser = (name, email, seller) => {
+          const user = {name, email, seller};
+          fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+          })
+          .then(res => res.json())
+          .then(data => {
+            getUserToken(email)
+            
+          })
+
         }
+        const getUserToken = email => {
+          fetch(`http://localhost:5000/jwt?email=${email}`)
+          .then(res => res.json())
+          .then(data => {
+            if(data.accessToken){
+              localStorage.setItem('accessToken', data.accessToken)
+              navigate('/');
+            }
+          })
+        }
+        
     return (
         <form onSubmit={handleSubmit}>
             <input className='border-b-4 w-full py-3 outline-none font-semibold' type="text" required name="name" placeholder='Name' />
@@ -61,8 +92,8 @@ const SingUp = () => {
           </div>
             <div className='flex mt-2 font-semibold'>
             <span>Join As a</span>
-            <input type="radio" name="radio-1" className="radio ml-2" checked /><span className='ml-2'>Buyer</span>
-<input type="radio" onClick={handleChecked} name="radio-1" className="radio ml-2" /><span className='ml-2'>Seller</span>
+            <input type="radio" name="radio-1" onClick={() => setSeller(false)} className=" ml-2"  /><span className='ml-2'>Buyer</span>
+<input type="radio" onClick={() => setSeller(true)} name="radio-1" className=" ml-2" /><span className='ml-2'>Seller</span>
             </div>
             <button className='submit-btn w-full text-white font-semibold text-xl mt-5' type="submit" >Register</button>
         </form>

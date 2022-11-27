@@ -2,7 +2,7 @@ import React from 'react';
 
 const Trust = () => {
     return (
-        <section className=' bg-base-200 p-3 md:p-5 lg:py-12' >
+        <section className=' my-6 md:my-12 bg-base-200 p-3 md:p-5 lg:py-12' >
             <div>
                 <div >
                     <h1 className='text-4xl font-semibold'>Why Trust <span className='text-primary'>Car Hub ?</span></h1>

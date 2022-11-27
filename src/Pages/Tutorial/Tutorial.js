@@ -34,7 +34,7 @@ const Tutorial = () => {
         }, 
     ]
     return (
-        <div className='bg-base-200 w-full p-2 py-9'>
+        <div className='bg-base-200  w-full p-2 py-9'>
             <h1 className='text-2xl md:text-4xl'>How to buy your car with <span className='text-primary'>Car Hub?</span></h1>
 
           <div className='bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 my-5 rounded-md p-4 md:p-5'>

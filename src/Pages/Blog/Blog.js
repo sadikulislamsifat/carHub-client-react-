@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../hooks/useTitle/useTitle';
 import BlogItem from './BlogItem';
 
 const Blog = () => {
 
     const [blogData, setBlogData] = useState([]);
 
-    // useTitle("Blog")
+    useTitle("Blog")
 
     useEffect(() => {
         fetch('http://localhost:5000/blog')
