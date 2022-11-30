@@ -10,11 +10,11 @@ const auth = getAuth(app);
 const Authprovider = ({children}) => {
 
     const [user, setUser] = useState("sifat")
-    console.log(user);
+    // console.log(user);
     const [loading, setLoading] = useState(true);
 
     const providerLogin = (provider) => {
-        // setLoading(true);
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
@@ -39,7 +39,7 @@ const Authprovider = ({children}) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log('user inside state change', currentUser);
+            // console.log('user inside state change', currentUser);
             setUser(currentUser);
             setLoading(false);
         });
@@ -47,7 +47,7 @@ const Authprovider = ({children}) => {
             unsubscribe();
         }
     }, [])
-    console.log( "user" ,  user)
+    // console.log( "user" ,  user)
     const authInfo = {user , loading, setLoading,  providerLogin,  updateUserProfile,  logOut, creatUser, singIn};
     return (
         <AuthContext.Provider value={authInfo}>

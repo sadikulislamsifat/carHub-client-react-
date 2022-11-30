@@ -3,7 +3,8 @@ import { AuthContext } from './../../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const Modal = ({cars}) => {
-    // const {name} = cars;
+    // const {} = cars;
+    console.log(cars)
     const {user} = useContext(AuthContext);
     return (
           <div>
@@ -11,7 +12,7 @@ const Modal = ({cars}) => {
             <div className="modal">
                 <div className="modal-box rounded-lg relative">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    {/* <h3 className="text-lg font-bold">{ name ? name : ''}</h3> */}
+                    <h3 className="text-lg font-bold">{ cars?.name}</h3>
                     <form className='mt-5'>
                         <input type="text" disabled className="input mt-5 input-bordered w-full " />
                         <input name='name' type="text" defaultValue={user?.displayName} placeholder="Full Name"  className="input mt-5 input-bordered w-full " />

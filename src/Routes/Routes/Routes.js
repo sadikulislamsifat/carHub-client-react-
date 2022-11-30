@@ -11,6 +11,12 @@ import Category from '../../Pages/UsedCars/Category/Category';
 import UsedCars from '../../Pages/UsedCars/UsedCars';
 import MyReviews from './../../Pages/MyRivew/MyReviews';
 import Reviews from './../../Pages/MyRivew/Reviews/Reviews';
+import DashBoardLayout from './../../Pages/DashBoard/DashBoardLayout/DashBoardLayout';
+import AllUsers from '../../Pages/DashBoard/AllUsers/AllUsers';
+import AllSeller from '../../Pages/DashBoard/AllSeller/AllSeller';
+import AllBuyers from '../../Pages/DashBoard/AllBuyers/AllBuyers';
+import ReportedProduct from '../../Pages/DashBoard/ReportedProduct/ReportedProduct';
+import AllProduct from './../../Pages/DashBoard/AllProduct/AllProduct';
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +46,32 @@ export const router = createBrowserRouter([
             {
                 path: '/review',
                 element: <Reviews></Reviews>
+            },
+            {
+                path: '/dashboard',
+                element: <DashBoardLayout></DashBoardLayout>,
+                children: [
+                    {
+                        path: '/dashboard/allusers',
+                        element: <AllUsers></AllUsers>
+                    },
+                    {
+                        path: '/dashboard/allseller',
+                        element: <AllSeller></AllSeller>
+                    },
+                    {
+                        path: '/dashboard/allbuyers',
+                        element: <AllBuyers></AllBuyers>
+                    },
+                    {
+                        path: '/dashboard/allproduct',
+                        element: <AllProduct></AllProduct>
+                    },
+                    {
+                        path: '/dashboard/reportedproduct',
+                        element: <ReportedProduct></ReportedProduct>
+                    },
+                ]
             },
             {
                 path: '/category/:id',

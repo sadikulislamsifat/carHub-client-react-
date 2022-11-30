@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import FavoriteBrand from '../../Home/FavoriteBrand/FavoriteBrand';
 import Modal from '../Modal/Modal';
+import ReportedModal from '../ReportedModal/ReportedModal';
 import SingleBrands from './SingleBrand/SingleBrands';
 
 const Category = () => {
     const categoryBrands = useLoaderData();
+    const [modalData, setModalData] = useState({});
+    
+    console.log(modalData) 
     const [cars, setCars] = useState(null)
+    console.log(cars)
     return (
        <div className=''>
       
@@ -18,6 +23,7 @@ const Category = () => {
                 categoryBrands.map(brand => <SingleBrands
                 key={brand.id}
                 brand={brand}
+                setModalData={brand}
                 setCars={setCars}
                 ></SingleBrands>)
             }
@@ -28,6 +34,9 @@ const Category = () => {
             <Modal
             cars={cars}
             ></Modal>
+            <ReportedModal
+            cars={cars}
+            ></ReportedModal>
        </div>
     );
 };

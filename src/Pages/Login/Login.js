@@ -3,6 +3,7 @@ import { AiFillEye,AiFillEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { useNavigate,  useLocation, Link } from 'react-router-dom';
 import useTitle from './../../hooks/useTitle/useTitle';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const [eyeBtn, setEyeBtn] = useState(false);
@@ -22,13 +23,26 @@ const Login = () => {
       .then(result => {
           const user = result.user;
           console.log(user);
-          navigate('/')
+          getUserToken(user.email)
+         
           form.reset();
       })
       .catch(e => {
         console.error(e)
         })
     }
+
+    const getUserToken = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res => res.json())
+        .then(data => {
+          if(data.accessToken){
+            localStorage.setItem('accessToken', data.accessToken)
+           toast.success('Login Successfull');
+           navigate('/');
+          }
+        })
+      }
     return (
         <form onSubmit={handleSubmit} className=''>
          <input className='border-b-4 outline-none py-3 w-full  font-semibold' type="email" name="email" placeholder='Email' />

@@ -2,10 +2,11 @@ import React from 'react';
 import { MdLocationPin, MdLocalGasStation } from "react-icons/md";
 import { TbEngine} from "react-icons/tb";
 import { BsBookmarkPlusFill, BsArrowRight} from "react-icons/bs";
+import { GoReport} from "react-icons/go";
 
 const SingleBrands = ({brand, setCars}) => {
     const {Milage, brand : brandName, category_id, color, engine, gearbox, id, img, location, name, price, year} = brand;
-    console.log(brand)
+    // console.log(brand)
     return (
     <div className='bg-white flex rounded-md border'>
         <div className='w-2/5'>
@@ -21,7 +22,7 @@ const SingleBrands = ({brand, setCars}) => {
                     <p className='text-red-500'>BDT: {price}</p>
 
                 </div>
-                <div className='font-bold text-gray-400'>
+                <div className='hidden md:block font-bold text-gray-400'>
                     <p>Mileage</p>
                     <p>{Milage} KM</p>
                 </div>
@@ -39,7 +40,9 @@ const SingleBrands = ({brand, setCars}) => {
                 htmlFor="booking-modal" 
                 >BOOK NOW</label>  <BsArrowRight className='text-lg md:text-xl text-primary ml-1'></BsArrowRight></button>
                 <div className=''>
-                    <BsBookmarkPlusFill className='text-lg md:text-xl text-primary mr-2'></BsBookmarkPlusFill>
+                <label htmlFor="reportedModal" className=" flex items-center mt-3"><GoReport className='text-lg md:text-xl text-primary mr-2'></GoReport>
+                    <span>Report to Admin</span></label>
+                    
                   
                 </div>
             </div>
