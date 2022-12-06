@@ -45,14 +45,4 @@ seller create and load from data base
 make admin option added
 
 
-
-
-admin access : 
-email : admin@gmail.com
-
-password: admin1
-
-
 live site link: https://car-hub-8a7fc.web.app/
-
-h.s.c exam er jonno beshi valo korte pari ni...
